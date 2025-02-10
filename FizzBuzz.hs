@@ -24,4 +24,4 @@ numeroAPalabra n
     | n < 10    = digitos !! n
     | n < 20    = otros !! (n - 10)
     | n < 100   = let (t, u) = n `divMod` 10
-                   in if u == 0 then otros !! t else otros !! t ++ " " ++ digitos !! u
+                   in if u == 0 then otros !! t else decenas !! t ++ " " ++ digitos !! u
