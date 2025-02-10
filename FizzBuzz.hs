@@ -1,13 +1,13 @@
 import Data.List (intercalate)
 
--- Función principal que evalúa el número
+-- Función principal que evalúa el número 
 fizzBuzz :: Int -> String
 fizzBuzz n
-    | n < 0 || n > 100 = "fuera de rango"
+    | n < 0 || n > 100 = "fuera de rango" -- en caso de que no esté en rango de 0 a 100
     | n `mod` 15 == 0 = "FizzBuzz!"
     | n `mod` 5 == 0  = "Fizz!"
     | n `mod` 3 == 0  = "Buzz!"
-    | otherwise       = numeroAPalabra n
+    | otherwise       = numeroAPalabra n -- llamar la funcion de conversion de numeros a palabra
 
 -- Función para convertir números a palabras
 digitos :: [String]
