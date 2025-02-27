@@ -1,3 +1,5 @@
+import Data.Char (toLower)
+
 -- 1. Suma de elementos en una lista
 sumarLista :: [Int] -> Int
 sumarLista = sum
@@ -38,5 +40,6 @@ divisores :: Int -> [Int]
 divisores n = [x | x <- [1..n], n `mod` x == 0]
 
 -- 10. Palíndromo
-esPalindromo :: String -> Bool
-esPalindromo str = str == reverse str
+esPalindromo2 :: String -> Bool
+esPalindromo2 str = let cleanStr = map toLower (filter (/= ' ') str)
+                    in cleanStr == reverse cleanStr
