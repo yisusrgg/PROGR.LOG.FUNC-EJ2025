@@ -2,6 +2,7 @@ import Data.Map (Map, mapWithKey, fromList, toList)
 import qualified Data.Map.Strict as Map
 import Data.Char (toUpper)
 import Data.List (nub)
+import Data.Array
 import Data.List (genericLength)
 
 -- 1. Funciones para aplicar descuento e IVA
@@ -38,8 +39,8 @@ moduloVector :: [Double] -> Double
 moduloVector v = sqrt (sum (map (^2) v))
 
 -- 6. Encontrar valores atípicos
-valoresAtipicos :: [Double] -> [Double]
-valoresAtipicos xs = filter esAtipico xs
+  valoresAtipicos :: [Double] -> [Double]
+  valoresAtipicos xs = filter esAtipico xs
   where
     n = genericLength xs
     media = sum xs / n
@@ -47,3 +48,5 @@ valoresAtipicos xs = filter esAtipico xs
     desviacionEstandar = sqrt varianza
     puntuacionTipica x = (x - media) / desviacionEstandar
     esAtipico x = let pt = puntuacionTipica x in pt > 3 || pt < -3
+
+arrayEnteros :: Array Int Int
